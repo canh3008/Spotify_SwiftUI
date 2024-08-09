@@ -20,6 +20,9 @@
 		53C124A72C65C5C4008FAD7D /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124A62C65C5C4008FAD7D /* DatabaseHelper.swift */; };
 		53C124A92C65CFEC008FAD7D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124A82C65CFEC008FAD7D /* User.swift */; };
 		53C124AB2C65CFF3008FAD7D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124AA2C65CFF3008FAD7D /* Product.swift */; };
+		53C124B22C660AA6008FAD7D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124B12C660AA6008FAD7D /* HomeView.swift */; };
+		53C124B42C66105E008FAD7D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124B32C66105E008FAD7D /* CategoryCell.swift */; };
+		53C124B72C661288008FAD7D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124B62C661288008FAD7D /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		53C124A62C65C5C4008FAD7D /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		53C124A82C65CFEC008FAD7D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		53C124AA2C65CFF3008FAD7D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		53C124B12C660AA6008FAD7D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		53C124B32C66105E008FAD7D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		53C124B62C661288008FAD7D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		53C124732C65BC06008FAD7D /* Spotify_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				53C124AE2C660A6A008FAD7D /* Spotify */,
 				53C124A12C65C02C008FAD7D /* Shared */,
 				53C124742C65BC06008FAD7D /* Spotify_DemoApp.swift */,
 				53C124762C65BC06008FAD7D /* ContentView.swift */,
@@ -150,6 +157,40 @@
 				53C124AA2C65CFF3008FAD7D /* Product.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		53C124AE2C660A6A008FAD7D /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				53C124B52C661273008FAD7D /* Models */,
+				53C124B02C660A7F008FAD7D /* Components */,
+				53C124AF2C660A71008FAD7D /* Core */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		53C124AF2C660A71008FAD7D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				53C124B12C660AA6008FAD7D /* HomeView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		53C124B02C660A7F008FAD7D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				53C124B32C66105E008FAD7D /* CategoryCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		53C124B52C661273008FAD7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53C124B62C661288008FAD7D /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,10 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C124A32C65C03E008FAD7D /* ImageLoaderView.swift in Sources */,
+				53C124B72C661288008FAD7D /* Category.swift in Sources */,
 				53C124A72C65C5C4008FAD7D /* DatabaseHelper.swift in Sources */,
 				53C124A92C65CFEC008FAD7D /* User.swift in Sources */,
 				53C124772C65BC06008FAD7D /* ContentView.swift in Sources */,
 				53C124752C65BC06008FAD7D /* Spotify_DemoApp.swift in Sources */,
+				53C124B42C66105E008FAD7D /* CategoryCell.swift in Sources */,
+				53C124B22C660AA6008FAD7D /* HomeView.swift in Sources */,
 				53C124A52C65C0F8008FAD7D /* Constants.swift in Sources */,
 				53C124AB2C65CFF3008FAD7D /* Product.swift in Sources */,
 			);
