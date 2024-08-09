@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var products: [Product] = []
+    @State var users: [User] = []
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
+        ScrollView(content: {
+            VStack(content: {
+                ForEach(users) { user in
+                    Text(user.lastName ?? "")
+                }
+//                ForEach(products) { product in
+//                    Text(product.title ?? "")
+//                }
+            })
+        })
         .padding()
+        .task {
+            await getData()
+        }
+    }
+
+    func getData() async {
+        do {
+            users = try await DatabaseHelper().getUsers()
+            products = try await DatabaseHelper().getProducts()
+        } catch {
+            print("zzzzz error")
+        }
     }
 }
 
