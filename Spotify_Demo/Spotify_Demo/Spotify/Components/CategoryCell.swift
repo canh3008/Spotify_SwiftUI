@@ -21,6 +21,13 @@ struct CategoryCell: View {
     }
 }
 
+extension View {
+    func themeColors(isSelected: Bool) -> some View {
+        self.background(isSelected ? .spotifyGreen : .spotifyDarkGray)
+            .foregroundStyle(isSelected ? .spotifyBlack : .spotifyWhite)
+    }
+}
+
 #Preview {
     CategoryCell()
 }

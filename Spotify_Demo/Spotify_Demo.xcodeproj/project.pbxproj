@@ -23,6 +23,10 @@
 		53C124B22C660AA6008FAD7D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124B12C660AA6008FAD7D /* HomeView.swift */; };
 		53C124B42C66105E008FAD7D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124B32C66105E008FAD7D /* CategoryCell.swift */; };
 		53C124B72C661288008FAD7D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C124B62C661288008FAD7D /* Category.swift */; };
+		CE346FD92DD22E0F00915F56 /* NewReleaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE346FD82DD22E0F00915F56 /* NewReleaseCell.swift */; };
+		CEBC9EC92DD0B7E5006D5529 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = CEBC9EC82DD0B7E5006D5529 /* SwiftfulRouting */; };
+		CEBC9ECC2DD0B7F5006D5529 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = CEBC9ECB2DD0B7F5006D5529 /* SwiftfulUI */; };
+		CEBC9ECE2DD0B9D0006D5529 /* RecentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC9ECD2DD0B9D0006D5529 /* RecentsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,8 @@
 		53C124B12C660AA6008FAD7D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53C124B32C66105E008FAD7D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		53C124B62C661288008FAD7D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CE346FD82DD22E0F00915F56 /* NewReleaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCell.swift; sourceTree = "<group>"; };
+		CEBC9ECD2DD0B9D0006D5529 /* RecentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBC9ECC2DD0B7F5006D5529 /* SwiftfulUI in Frameworks */,
 				53C124A02C65C024008FAD7D /* SDWebImageSwiftUI in Frameworks */,
+				CEBC9EC92DD0B7E5006D5529 /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +161,6 @@
 				53C124A22C65C03E008FAD7D /* ImageLoaderView.swift */,
 				53C124A42C65C0F8008FAD7D /* Constants.swift */,
 				53C124A62C65C5C4008FAD7D /* DatabaseHelper.swift */,
-				53C124A82C65CFEC008FAD7D /* User.swift */,
-				53C124AA2C65CFF3008FAD7D /* Product.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				53C124B32C66105E008FAD7D /* CategoryCell.swift */,
+				CEBC9ECD2DD0B9D0006D5529 /* RecentsCell.swift */,
+				CE346FD82DD22E0F00915F56 /* NewReleaseCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,6 +196,8 @@
 		53C124B52C661273008FAD7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53C124A82C65CFEC008FAD7D /* User.swift */,
+				53C124AA2C65CFF3008FAD7D /* Product.swift */,
 				53C124B62C661288008FAD7D /* Category.swift */,
 			);
 			path = Models;
@@ -211,6 +221,8 @@
 			name = Spotify_Demo;
 			packageProductDependencies = (
 				53C1249F2C65C024008FAD7D /* SDWebImageSwiftUI */,
+				CEBC9EC82DD0B7E5006D5529 /* SwiftfulRouting */,
+				CEBC9ECB2DD0B7F5006D5529 /* SwiftfulUI */,
 			);
 			productName = Spotify_Demo;
 			productReference = 53C124712C65BC06008FAD7D /* Spotify_Demo.app */;
@@ -286,6 +298,8 @@
 			mainGroup = 53C124682C65BC06008FAD7D;
 			packageReferences = (
 				53C1249E2C65C024008FAD7D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				CEBC9EC72DD0B7E5006D5529 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+				CEBC9ECA2DD0B7F5006D5529 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
 			);
 			productRefGroup = 53C124722C65BC06008FAD7D /* Products */;
 			projectDirPath = "";
@@ -331,11 +345,13 @@
 			files = (
 				53C124A32C65C03E008FAD7D /* ImageLoaderView.swift in Sources */,
 				53C124B72C661288008FAD7D /* Category.swift in Sources */,
+				CE346FD92DD22E0F00915F56 /* NewReleaseCell.swift in Sources */,
 				53C124A72C65C5C4008FAD7D /* DatabaseHelper.swift in Sources */,
 				53C124A92C65CFEC008FAD7D /* User.swift in Sources */,
 				53C124772C65BC06008FAD7D /* ContentView.swift in Sources */,
 				53C124752C65BC06008FAD7D /* Spotify_DemoApp.swift in Sources */,
 				53C124B42C66105E008FAD7D /* CategoryCell.swift in Sources */,
+				CEBC9ECE2DD0B9D0006D5529 /* RecentsCell.swift in Sources */,
 				53C124B22C660AA6008FAD7D /* HomeView.swift in Sources */,
 				53C124A52C65C0F8008FAD7D /* Constants.swift in Sources */,
 				53C124AB2C65CFF3008FAD7D /* Product.swift in Sources */,
@@ -678,6 +694,22 @@
 				minimumVersion = 3.1.1;
 			};
 		};
+		CEBC9EC72DD0B7E5006D5529 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+		CEBC9ECA2DD0B7F5006D5529 /* XCRemoteSwiftPackageReference "SwiftfulUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -685,6 +717,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 53C1249E2C65C024008FAD7D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		CEBC9EC82DD0B7E5006D5529 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBC9EC72DD0B7E5006D5529 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
+		};
+		CEBC9ECB2DD0B7F5006D5529 /* SwiftfulUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBC9ECA2DD0B7F5006D5529 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
+			productName = SwiftfulUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

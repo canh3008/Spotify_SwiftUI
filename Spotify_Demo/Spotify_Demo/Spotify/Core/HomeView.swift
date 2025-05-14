@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct HomeView: View {
 
@@ -16,19 +17,27 @@ struct HomeView: View {
 
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
+    @State private var products: [Product] = []
 
     var body: some View {
         ZStack {
             Color.spotifyBlack.ignoresSafeArea()
 
             ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack(spacing: 1, pinnedViews: [.sectionHeaders], content: {
-                    Section {
-                        ForEach(1..<10) { index in
-                            Rectangle()
-                                .fill(.red)
-                                .frame(width: 300, height: 300)
-                        }
+                LazyVStack(
+                    spacing: 1,
+                    pinnedViews: [.sectionHeaders],
+                    content: {
+                        Section {
+                            VStack {
+                                recentsView
+                                
+                                if let product = products.first {
+                                    newReleaseSection(product)
+                                }
+                                
+                            }
+                        .padding(.horizontal, 16)
                     } header: {
                         headerView
                     }
@@ -40,6 +49,7 @@ struct HomeView: View {
         }
         .task {
             await getUser()
+            await getProduct()
         }
         .toolbar(.hidden, for: .navigationBar)
     }
@@ -49,6 +59,14 @@ struct HomeView: View {
             currentUser = try await DatabaseHelper().getUsers()[1]
         } catch {
             print("zzzzz error")
+        }
+    }
+    
+    private func getProduct() async {
+        do {
+            products = try await Array(DatabaseHelper().getProducts().prefix(8))
+        } catch {
+            print("Error get product")
         }
     }
 
@@ -83,6 +101,28 @@ struct HomeView: View {
 
         }
         .padding(.vertical, 24)
+    }
+    
+    private var recentsView: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+            if let product {
+                RecentsCell(title: product.title ?? "", iconLink: product.firstImage)
+            }
+        }
+    }
+    
+    private func newReleaseSection(_ product: Product) -> some View {
+        NewReleaseCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description, onAddToPlaylistPressed: {
+                
+            }, onPlayPressed: {
+                
+            }
+        )
     }
 }
 
